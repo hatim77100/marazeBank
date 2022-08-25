@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('./font/roboto/Roboto-Italic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+
