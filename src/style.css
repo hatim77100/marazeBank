@@ -3,10 +3,36 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'MyFont';
-    src: url('./font/roboto/Roboto-Italic.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
+  font-family: "MyFont";
+  src: url("./font/roboto/Roboto-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
 
+.font-open {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ------------- background ------------------ */
+
+.bg-midnightblue {
+  background-color: rgb(206, 206, 236);
+  color:#000000;
+}
+
+.bg-gradient-to-r	{
+  background-image: linear-gradient(to right, #c0b283, #dab641);
+}
+
+thead tr:last-of-type {
+  border-bottom: 2px solid rgb(179, 179, 230);
+}
+
+.shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.vh {
+  height: 100vh;
+}
 

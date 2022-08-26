@@ -19,4 +19,12 @@ import '@fortawesome/fontawesome-free/js/all';
   
 //   document.body.appendChild(component());
 
-console.log("script ok");
+// console.log("script ok");
+
+let btn1 = document.getElementById("btn1");
+let inp1 = document.getElementById("inp1").value;
+let span = document.querySelector('span');
+console.log(inp1);
+btn1.addEventListener("click", ()=> {
+    span.innerHTML = inp1;
+});
