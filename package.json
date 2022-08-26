@@ -8,7 +8,7 @@
     "start": "run-p start:**",
     "start:watch": "webpack --watch",
     "start:serve": "webpack serve --open",
-    "start:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch",
+    "start:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/assets/css/output.css --watch",
     "server": "node server.js",
     "build": "webpack"
   },

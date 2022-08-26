@@ -16,15 +16,16 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "./src/assets/img/", to: "img" }
+        { from: "./src/assets/img/", to: "assets/img/" },
+        { from: "./src/assets/fonts/", to: "assets/fonts/" },
       ],
     }),
   ],
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-      clean: true,
-      publicPath: '/',
+    clean: true,
+    publicPath: "/",
   },
   optimization: {
     runtimeChunk: "single",

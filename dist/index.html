@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Getting Started</title>
     <script src="./main.js"></script>
-    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="./assets/css/output.css" />
   <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
   <body class="font-open bg-slate-200">
     <div class="flex flex-col justify-start items-center">
@@ -18,7 +18,7 @@
             </tr>
             <tr class="border">
               <th class="px-4 py-4">iban</th>
-              <td class="border-l-2 px-4 py-4">FR1316546464964964</td>
+              <td class="border-l-2 px-4 py-4 ">FR1316546464964964</td>
             </tr>
             <tr class="border">
               <th class="px-4 py-4">Code banque</th>
@@ -30,10 +30,11 @@
             </tr>
             <tr>
               <th class="px-4 py-4">Clé du RIB</th>
-              <td class="border-l-2 px-4 py-4">56</td>
+              <td class="border-l-2 px-4 py-4 ">56</td>
             </tr>
           </thead>
         </table>
+        <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8"> Autorisation de découverte : <span> </span></p>
       </div>
     </div>
     <section>
@@ -61,7 +62,7 @@
           </button>
         </div>
         <p class=" bg-midnightblue m-4 shadow rounded-md px-4 py-1">
-          Votre solde est de :<span></span> €
+          Votre solde est de :<span id="span2"></span> €
         </p>
       </div>
     </section>

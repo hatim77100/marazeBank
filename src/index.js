@@ -23,8 +23,14 @@ import '@fortawesome/fontawesome-free/js/all';
 
 let btn1 = document.getElementById("btn1");
 let inp1 = document.getElementById("inp1").value;
-let span = document.querySelector('span');
+let span2 = document.querySelector('#span2');
 console.log(inp1);
-btn1.addEventListener("click", ()=> {
-    span.innerHTML = inp1;
-});
+// btn1.addEventListener("click", ()=> {
+//     span2.innerHTML = inp1;
+// });
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+  
+span2.innerHTML = getRndInteger(-300, 100000);
