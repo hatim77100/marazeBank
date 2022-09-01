@@ -6,11 +6,17 @@
     <script src="./main.js"></script>
     <link rel="stylesheet" href="./assets/css/output.css" />
   <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
-  <body class="font-open bg-slate-200">
+  <body class="font-open bg-slate-200 overflow-x-hidden">
     <div class="flex flex-col justify-start items-center">
-      <h1 class=" text-2xl mt-4 shadow border rounded-lg px-2 py-2 uppercase font-bold bg-gradient-to-r text-black bg-transparent tracking-wide">bienvenue chez mazebank</h1>
+      <h1
+        class="text-2xl mt-4 shadow border rounded-lg px-2 py-2 uppercase font-bold bg-gradient-to-r text-black bg-transparent tracking-wide"
+      >
+        bienvenue chez mazebank
+      </h1>
       <div class="pt-16 h-full">
-        <table class="border-collapse w-auto border bg-midnightblue shadow rounded-sm">
+        <table
+          class="border-collapse w-auto border bg-midnightblue shadow rounded-sm"
+        >
           <thead class="text-left">
             <tr class="border">
               <th class="px-4 py-4">Numéro de compte</th>
@@ -18,7 +24,7 @@
             </tr>
             <tr class="border">
               <th class="px-4 py-4">iban</th>
-              <td class="border-l-2 px-4 py-4 ">FR1316546464964964</td>
+              <td class="border-l-2 px-4 py-4">FR1316546464964964</td>
             </tr>
             <tr class="border">
               <th class="px-4 py-4">Code banque</th>
@@ -30,40 +36,53 @@
             </tr>
             <tr>
               <th class="px-4 py-4">Clé du RIB</th>
-              <td class="border-l-2 px-4 py-4 ">56</td>
+              <td class="border-l-2 px-4 py-4">56</td>
             </tr>
           </thead>
         </table>
-        <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8"> Autorisation de découverte : <span> </span></p>
+        <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8">
+          Autorisation de découverte : <span id="autorisation"> </span>€
+        </p>
       </div>
     </div>
     <section>
-      <div class="flex flex-col justify-start items-center pt-16 border-2">
-        <div class=" bg-midnightblue shadow rounded-md px-2 py-1 ">
+      <div class="flex flex-col justify-start items-center pt-8 border-2">
+        <div class="bg-midnightblue shadow rounded-md px-2 py-1">
           <label class="">
             Déposer de l'argent :
-            <input class="rounded-md text-gray-500 border-collapse outline-none" type="number" value="" id="inp1"
+            <input
+              class="rounded-md text-gray-500 border-collapse outline-none inline-block w-28"
+              type="number"
+              value=""
+              id="deposer"
           /></label>
           <button
             class="border-2 px-4 rounded-md"
             type="submit"
-            id="btn1"
+            id="btn-deposer"
           >
             Déposer
           </button>
         </div>
-        <div class=" bg-midnightblue mt-4 shadow rounded-md px-2 py-1">
-          <label>
-            Retirer de l'argent :
-            <input class="rounded-md ml-2 text-gray-500 border-collapse outline-none" type="number"
-          /></label>
-          <button class="border-2 px-6 rounded-md " type="submit">
+        <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1">
+          <label> Retirer de l'argent :</label>
+          <input
+            class="rounded-md ml-2 text-gray-500 border-collapse outline-none inline-block w-28"
+            type="number"
+            id="retirer"
+          />
+          <button class="border-2 px-5 rounded-md" type="submit" id="btn-retirer">
             Retirer
           </button>
         </div>
-        <p class=" bg-midnightblue m-4 shadow rounded-md px-4 py-1">
-          Votre solde est de :<span id="span2"></span> €
-        </p>
+        <!-- <p >
+          :<span id="span2"></span> €
+        </p> -->
+        <div class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8">
+          <p >
+            votre solde est de : <span id="solde"> </span>€
+          </p>
+        </div>
       </div>
     </section>
   </body>
