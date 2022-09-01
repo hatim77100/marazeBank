@@ -551,10 +551,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -567,6 +563,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -577,6 +577,10 @@ video {
 
 .table {
   display: table;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
