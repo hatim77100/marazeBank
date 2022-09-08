@@ -563,6 +563,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -768,5 +772,9 @@ thead tr:last-of-type {
 
 .vh {
   height: 100vh;
+}
+
+.block {
+  display: block;
 }
 

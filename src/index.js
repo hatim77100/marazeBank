@@ -24,10 +24,10 @@ const inputDeposer = document.getElementById("deposer");
 const btnRetirer = document.getElementById("btn-retirer");
 const inputRetirer = document.getElementById("retirer");
 const autorisation = document.getElementById("autorisation");
-const inputSolde = document.getElementById("solde");
+const paragrapheSolde = document.getElementById("solde");
 const decouvertDepasser = document.getElementById("decouvert-depassé");
 
-// console.log(decouvertDepasser);
+// random function
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max + min));
 }
@@ -40,22 +40,25 @@ autorisation.textContent = decouvert;
 // let solde = getRndInteger(-300, 10000);
 let solde = 0;
 
-inputSolde.textContent = solde;
-console.log(inputSolde);
+paragrapheSolde.textContent = solde;
+// console.log(paraSolde);
 
 // Events
 btnDeposer.addEventListener("click", () => {
   let resultat = parseInt(inputDeposer.value);
-       solde+=resultat;
-  inputSolde.textContent = solde;
+  solde += resultat;
+  paragrapheSolde.textContent = solde;
 });
 
 btnRetirer.addEventListener("click", () => {
-  let valeur1 = parseInt(inputRetirer.value);
-      solde-= valeur1;
-  inputSolde.textContent = solde;
- 
+  if ((solde == 0) & (inputRetirer.value <= 300) & (decouvert >= -300)) {
+    let valeur1 = parseInt(inputRetirer.value);
+    solde -= valeur1;
+    // soldeDeDecouvert-= (valeur1 - decouvert);
+    paragrapheSolde.textContent = solde;
+    // autorisation.textContent = soldeDeDecouvert;
+  } else {
+    decouvertDepasser.classList.add("block");
+    decouvertDepasser.textContent = " vous ne pouvez pas retirez !";
+  }
 });
-
-
-

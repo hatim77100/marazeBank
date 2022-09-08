@@ -35,4 +35,7 @@ thead tr:last-of-type {
 .vh {
   height: 100vh;
 }
+.block {
+  display: block;
+}
 
