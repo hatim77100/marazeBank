@@ -48,17 +48,28 @@ btnDeposer.addEventListener("click", () => {
   let resultat = parseInt(inputDeposer.value);
   solde += resultat;
   paragrapheSolde.textContent = solde;
+  if (solde > -300) {
+    decouvertDepasser.classList.add("none");
+  } 
+  
 });
 
-btnRetirer.addEventListener("click", () => {
-  if ((solde == 0) & (inputRetirer.value <= 300) & (decouvert >= -300)) {
-    let valeur1 = parseInt(inputRetirer.value);
+let retirerDeLArgent = () => {
+  let valeur1 = parseInt(inputRetirer.value);
+  if (solde > -300) {
     solde -= valeur1;
-    // soldeDeDecouvert-= (valeur1 - decouvert);
     paragrapheSolde.textContent = solde;
-    // autorisation.textContent = soldeDeDecouvert;
+  } else if ((solde < -300) & (inputRetirer.value > 0)) {
+    decouvertDepasser.classList.add("block");
+    decouvertDepasser.style.color = "red";
+    decouvertDepasser.textContent =
+      " Vous avez dépassé le découvert autorisé !";
   } else {
     decouvertDepasser.classList.add("block");
-    decouvertDepasser.textContent = " vous ne pouvez pas retirez !";
+    decouvertDepasser.style.color = "red";
+    decouvertDepasser.textContent =
+      " Vous avez dépassé le découvert autorisé !";
   }
-});
+};
+
+btnRetirer.addEventListener("click", retirerDeLArgent);

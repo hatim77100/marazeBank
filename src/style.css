@@ -38,4 +38,7 @@ thead tr:last-of-type {
 .block {
   display: block;
 }
+.none{
+  display: none;
+}
 

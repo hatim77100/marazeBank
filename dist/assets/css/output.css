@@ -778,3 +778,7 @@ thead tr:last-of-type {
   display: block;
 }
 
+.none{
+  display: none;
+}
+
