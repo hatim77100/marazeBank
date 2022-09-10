@@ -48,22 +48,22 @@ btnDeposer.addEventListener("click", () => {
   let resultat = parseInt(inputDeposer.value);
   solde += resultat;
   paragrapheSolde.textContent = solde;
-  if (solde > -300) {
+  if (solde >= -300) {
     decouvertDepasser.classList.add("none");
-  } 
-  
+  }
 });
 
 let retirerDeLArgent = () => {
   let valeur1 = parseInt(inputRetirer.value);
-  if (solde > -300) {
+  if (solde > -300 ) {
     solde -= valeur1;
     paragrapheSolde.textContent = solde;
-  } else if ((solde < -300) & (inputRetirer.value > 0)) {
+  } else if (solde < -300 && inputRetirer.value > 0) {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
       " Vous avez dépassé le découvert autorisé !";
+    // paragrapheSolde.textContent = -300;
   } else {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
