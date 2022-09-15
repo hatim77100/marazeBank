@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
-    <script src="./main.js"></script>
-    <script src="./components/profils.js" defer></script>
-    <link rel="stylesheet" href="./assets/css/output.css" />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body class="font-open bg-slate-200 overflow-x-hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./main.js"></script>
+  <script src="./components/profils.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/output.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>mazebank</title>
+</head>
+
+<body class="font-verdana bg-slate-200 overflow-x-hidden">
+  <div class="flex justify-center">
+    <h1
+      class="text-2xl mt-4 shadow border rounded-lg px-2 py-2 uppercase font-bold bg-gradient-to-r text-black bg-transparent tracking-wide">
+      bienvenue chez mazebank
+    </h1>
+  </div>
+
+  <div class="grid grid-cols-2">
     <div class="flex flex-col items-center">
-      <h1
-        class="text-2xl mt-4 shadow border rounded-lg px-2 py-2 uppercase font-bold bg-gradient-to-r text-black bg-transparent tracking-wide"
-      >
-        bienvenue chez mazebank
-      </h1>
+      <div>
+        <label for="">Nom d'utilisateur</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Prénom d'utilisateur</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Numéro de compte</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Iban</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Code banque</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Code guichet</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">Clé du RIB</label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="flex flex-col items-center">
       <div class="pt-16 h-full">
-        <table
-          class="border-collapse w-auto border bg-midnightblue shadow rounded-sm"
-        >
+        <table class="border-collapse w-auto border bg-midnightblue shadow rounded-sm">
           <thead class="text-left">
             <tr class="border">
               <th class="px-4 py-4">Numéro de compte</th>
@@ -46,58 +79,39 @@
         <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8">
           Autorisation de découvert : <span id="autorisation"> </span>€
         </p>
-        <p
-          class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8 hidden"
-          id="decouvert-depassé"
-        ></p>
+        <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8 hidden" id="decouvert-depassé"></p>
       </div>
+      <section>
+        <div class="flex flex-col justify-start items-center pt-8 border-2">
+          <div class="bg-midnightblue shadow rounded-md px-2 py-1">
+            <label class="">
+              Déposer de l'argent :
+              <input class="rounded-md text-gray-500 border-collapse outline-none inline-block w-28" type="number"
+                value="" id="deposer" min="0" step="5" /></label>
+            <button class="border-2 px-4 rounded-md" type="submit" id="btn-deposer">
+              Déposer
+            </button>
+          </div>
+          <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1">
+            <label> Retirer de l'argent :</label>
+            <input class="rounded-md ml-2 text-gray-500 border-collapse outline-none inline-block w-28" type="number"
+              id="retirer" min="0" max="2000" step="5" />
+            <button class="border-2 px-5 rounded-md" type="submit" id="btn-retirer">
+              Retirer
+            </button>
+          </div>
+          <div class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8">
+            <p for="">
+              votre solde est de :
+              <span id="solde" type="number" class="rounded-md inline-block"></span>€
+            </p>
+          </div>
+          <p class=" shadow rounded-md px-4 py-2 mt-8 inline-block text-gray-100 text-2xl bg-orange-500 cursor-pointer">
+            Effectuer un virement</p>
+        </div>
+      </section>
     </div>
-    <section>
-      <div class="flex flex-col justify-start items-center pt-8 border-2">
-        <div class="bg-midnightblue shadow rounded-md px-2 py-1">
-          <label class="">
-            Déposer de l'argent :
-            <input
-              class="rounded-md text-gray-500 border-collapse outline-none inline-block w-28"
-              type="number"
-              value=""
-              id="deposer"
-          /></label>
-          <button
-            class="border-2 px-4 rounded-md"
-            type="submit"
-            id="btn-deposer"
-          >
-            Déposer
-          </button>
-        </div>
-        <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1">
-          <label> Retirer de l'argent :</label>
-          <input
-            class="rounded-md ml-2 text-gray-500 border-collapse outline-none inline-block w-28"
-            type="number"
-            id="retirer"
-          />
-          <button
-            class="border-2 px-5 rounded-md"
-            type="submit"
-            id="btn-retirer"
-          >
-            Retirer
-          </button>
-        </div>
-        <div class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8">
-          <p for="">
-            votre solde est de :
-            <span
-              id="solde"
-              type="number"
-              class="rounded-md inline-block"
-            ></span
-            >€
-          </p>
-        </div>
-      </div>
-    </section>
-  </body>
+  </div>
+</body>
+
 </html>

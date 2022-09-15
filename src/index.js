@@ -35,15 +35,15 @@ function getRndInteger(min, max) {
 // autorisation de découvert:
 let decouvert = 300;
 autorisation.textContent = decouvert;
-
+// let retirer = parseInt(inputRetirer.value);
 // Le solde random:
-// let solde = getRndInteger(-300, 10000);
+// let solde = getRndInteger(-300, 1000000);
 let solde = 0;
 
 paragrapheSolde.textContent = solde;
 // console.log(paraSolde);
 
-// Events
+//------- Events ----------
 btnDeposer.addEventListener("click", () => {
   let resultat = parseInt(inputDeposer.value);
   solde += resultat;
@@ -53,23 +53,39 @@ btnDeposer.addEventListener("click", () => {
   }
 });
 
-let retirerDeLArgent = () => {
+const retirerDeLArgent = () => {
   let valeur1 = parseInt(inputRetirer.value);
-  if (solde > -300 ) {
-    solde -= valeur1;
-    paragrapheSolde.textContent = solde;
-  } else if (solde < -300 && inputRetirer.value > 0) {
+  let newSold = (solde -= valeur1);
+  paragrapheSolde.textContent = `${newSold}`;
+  console.log(newSold);
+
+  if (newSold <= -300) {
+    solde = -300;
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
       " Vous avez dépassé le découvert autorisé !";
-    // paragrapheSolde.textContent = -300;
+    paragrapheSolde.textContent = `${solde}`;
+    console.log(solde, true);
   } else {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
       " Vous avez dépassé le découvert autorisé !";
   }
+  // if (solde > -300) {
+  //   solde -= valeur1;
+  //   paragrapheSolde.textContent = solde;
+  // } else if (solde <= -300) {
+  // decouvertDepasser.classList.add("block");
+  // decouvertDepasser.style.color = "red";
+  // decouvertDepasser.textContent =
+  //     " Vous avez dépassé le découvert autorisé !";
+  //   // paragrapheSolde.textContent = -300;
+  // } else if (solde <= -301) {
+  //   solde = -300;
+  //   console.log(solde);
+  // }
 };
 
 btnRetirer.addEventListener("click", retirerDeLArgent);
