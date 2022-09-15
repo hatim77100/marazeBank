@@ -2,20 +2,46 @@ import "@fortawesome/fontawesome-free/js/all";
 
 // users
 import Users from "./components/profils";
+import AddUser from "./components/addUser";
 
+// users information
+const userName = document.getElementById("user-name");
+const firstName = document.getElementById("first-name");
+const accountNumber = document.getElementById("account-number");
+const ibanInformation = document.getElementById("iban-information");
+const banqueCodeInformation = document.getElementById("banque-code-information");
+const branchCode = document.getElementById("branch-code");
+const ribKey = document.getElementById("rib-key");
+
+// complete information
+const nomUser = document.getElementById("nom");
+const prenomUser = document.getElementById("prenom");
 const numeroDeCompte = document.getElementById("numero-compte");
 const iban = document.getElementById("iban");
 const codeBanque = document.getElementById("code-banque");
 const codeGuichet = document.getElementById("code-guichet");
 const cleRib = document.getElementById("clé-rib");
+const btnValider = document.getElementById("btn-valider");
 
-let profil1 = new Users(156897895959, "FR15895612558", 25894, 20015, 56);
 
-numeroDeCompte.textContent = profil1.numeroDeCompte;
-iban.textContent = profil1.iban;
-codeBanque.textContent = profil1.codeBanque;
-codeGuichet.textContent = profil1.codeGuichet;
-cleRib.textContent = profil1.cleRib;
+// let user = new AddUser(nomUser, prenomUser, numeroDeCompte, iban, codeBanque, codeGuichet, cleRib);
+
+btnValider.addEventListener("click", ()=> {
+  nomUser.textContent = userName.value;
+  prenomUser.textContent = firstName.value;
+  numeroDeCompte.textContent = accountNumber.value;
+  iban.textContent = ibanInformation.value;
+  codeBanque.textContent = banqueCodeInformation.value;
+  codeGuichet.textContent = branchCode.value;
+  cleRib.textContent = ribKey.value;
+})
+// let profil1 = new Users(156897895959, "FR15895612558", 25894, 20015, 56);
+
+// numeroDeCompte.textContent = profil1.numeroDeCompte;
+// iban.textContent = profil1.iban;
+// codeBanque.textContent = profil1.codeBanque;
+// codeGuichet.textContent = profil1.codeGuichet;
+// cleRib.textContent = profil1.cleRib;
 
 //
 
