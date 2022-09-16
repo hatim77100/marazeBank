@@ -35,6 +35,7 @@ btnValider.addEventListener("click", ()=> {
   codeGuichet.textContent = branchCode.value;
   cleRib.textContent = ribKey.value;
 })
+
 // let profil1 = new Users(156897895959, "FR15895612558", 25894, 20015, 56);
 
 // numeroDeCompte.textContent = profil1.numeroDeCompte;
@@ -42,6 +43,7 @@ btnValider.addEventListener("click", ()=> {
 // codeBanque.textContent = profil1.codeBanque;
 // codeGuichet.textContent = profil1.codeGuichet;
 // cleRib.textContent = profil1.cleRib;
+
 
 //
 
@@ -80,38 +82,26 @@ btnDeposer.addEventListener("click", () => {
 });
 
 const retirerDeLArgent = () => {
+  let valeur2 = parseInt(inputDeposer.value);
   let valeur1 = parseInt(inputRetirer.value);
   let newSold = (solde -= valeur1);
   paragrapheSolde.textContent = `${newSold}`;
   console.log(newSold);
-
-  if (newSold <= -300) {
+  if (newSold < -300 ) {
     solde = -300;
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
-      " Vous avez dépassé le découvert autorisé !";
+      " Vous ne pouvez pas dépasser le découvert autorisé !";
     paragrapheSolde.textContent = `${solde}`;
     console.log(solde, true);
-  } else {
+  } else if (valeur2 > 0 && newSold <= -300) {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
-      " Vous avez dépassé le découvert autorisé !";
+      " Vous ne pouvez pas dépasser le découvert autorisé !";
+    paragrapheSolde.textContent = `${solde}`;
   }
-  // if (solde > -300) {
-  //   solde -= valeur1;
-  //   paragrapheSolde.textContent = solde;
-  // } else if (solde <= -300) {
-  // decouvertDepasser.classList.add("block");
-  // decouvertDepasser.style.color = "red";
-  // decouvertDepasser.textContent =
-  //     " Vous avez dépassé le découvert autorisé !";
-  //   // paragrapheSolde.textContent = -300;
-  // } else if (solde <= -301) {
-  //   solde = -300;
-  //   console.log(solde);
-  // }
 };
 
 btnRetirer.addEventListener("click", retirerDeLArgent);
