@@ -1,4 +1,10 @@
 import "@fortawesome/fontawesome-free/js/all";
+
+//----- chart -----
+import chart from "./components/chart";
+// ------ date ----
+import datex from "./components/date";
+
 // users
 import Users from "./components/profils";
 import AddUser from "./components/addUser";
@@ -45,16 +51,15 @@ btnValider.addEventListener("click", ()=> {
   console.log(solde)
 })
 
-// let profil1 = new Users(156897895959, "FR15895612558", 25894, 20015, 56);
+let profil1 = new Users("dupont","nicolas",156897895959, "FR15895612558", 25894, 20015, 56);
 
-// numeroDeCompte.textContent = profil1.numeroDeCompte;
-// iban.textContent = profil1.iban;
-// codeBanque.textContent = profil1.codeBanque;
-// codeGuichet.textContent = profil1.codeGuichet;
-// cleRib.textContent = profil1.cleRib;
-
-
-//
+nomUser.textContent = profil1.nom;
+prenomUser.textContent = profil1.prenom
+numeroDeCompte.textContent = profil1.numeroDeCompte;
+iban.textContent = profil1.iban;
+codeBanque.textContent = profil1.codeBanque;
+codeGuichet.textContent = profil1.codeGuichet;
+cleRib.textContent = profil1.cleRib;
 
 const btnDeposer = document.getElementById("btn-deposer");
 const inputDeposer = document.getElementById("deposer");
@@ -106,21 +111,22 @@ const retirerDeLArgent = () => {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
-      " Vous ne pouvez pas dépasser le découvert autorisé ! ";
+    " Vous ne pouvez pas dépasser le découvert autorisé ! ";
     paragrapheSolde.textContent = `${solde}`;
     // console.log(solde, true);
   } else if (valeur2 > 0 && newSold <= -300) {
     decouvertDepasser.classList.add("block");
     decouvertDepasser.style.color = "red";
     decouvertDepasser.textContent =
-      " Vous ne pouvez pas dépasser le découvert autorisé !";
+    " Vous ne pouvez pas dépasser le découvert autorisé !";
     paragrapheSolde.textContent = `${newSold}`;
   }
 };
 
 btnRetirer.addEventListener("click", retirerDeLArgent);
 
-
+datex();
+chart();
 
 
 

@@ -1,5 +1,7 @@
 class Users {
-  constructor(numeroDeCompte, iban, codeBanque, codeGuichet, cleRib) {
+  constructor(nom, prenom, numeroDeCompte, iban, codeBanque, codeGuichet, cleRib) {
+    this.nom = nom,
+    this.prenom = prenom,
     this.numeroDeCompte = numeroDeCompte;
     this.iban = iban;
     this.codeBanque = codeBanque;

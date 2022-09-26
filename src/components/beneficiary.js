@@ -6,10 +6,12 @@ export const inputBeneficiary = getElementById("input-beneficiary");
 export const spanBeneficiary = getElementById("span-beneficiary");
 export const btnBeneficiary = getElementById("btn-beneficiary");
 const divBeneficiary = getElementById("div-beneficiary");
+const optionBeneficiary = getElementById("option-benefeciary");
 
 export const addBeneficiaries = () => {
     divBeneficiary.classList.add("block");
     spanBeneficiary.textContent = inputBeneficiary.value;
+    optionBeneficiary.textContent = inputBeneficiary.value;
 }
 
 

@@ -6,22 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/css/output.css" />
   <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://data.jsdelivr.com/v1/package/npm/chart.js/badge" defer></script>
   <title>mazebank</title>
 <script defer src="/runtime.bundle.js"></script><script defer src="/main.bundle.js"></script></head>
 
 <body class="font-verdana bg-slate-200 overflow-x-hidden">
-  <div class="flex justify-center">
-    <h1
-      class="text-2xl mt-4 shadow rounded-lg px-2 py-2 uppercase font-bold bg-gradient-to-r text-black bg-transparent tracking-wide">
+  <header class="flex justify-center items-center bg-gradient-to-r w-full h-14">
+    <img src="./assets/img/LogoMakr-7mp5uI.png" alt="logo" class=" w-16 h-16 absolute left-5">
+    <h1 class="text-2xl shadow rounded-lg px-2 py-2 uppercase font-bold  text-white bg-transparent tracking-wide">
       bienvenue chez mazebank
     </h1>
-  </div>
-
+    <p id="date" class=" text-white text-2xl absolute right-4 font-bold"></p>
+  </header>
+  <!----------- users information ---------------->
   <div class="grid grid-cols-2">
     <div class="flex flex-col items-center pt-16">
       <h3
         class="bg-purple-500 py-4 px-2 rounded-sm w-7/12 shadow-md text-center text-white inline-block font-bold my-2 text-xl">
-        Nouveau client
+        Inscription
       </h3>
       <div class="bg-midnightblue border-2 py-2 px-2 rounded-sm w-7/12 shadow-md grid grid-cols-2">
         <label for="user-name" class="font-bold self-center">Nom </label>
@@ -68,8 +71,14 @@
         </button>
       </div>
     </div>
+    <!---------- complete information users ------->
     <div class="flex flex-col items-center">
       <div class="pt-16 h-full">
+
+        <h3
+          class="bg-purple-500 py-4 px-2 rounded-sm w-full shadow-md text-center text-white inline-block font-bold my-2 text-xl">
+          Informations client
+        </h3>
         <table class="border-collapse w-auto border bg-midnightblue shadow rounded-sm">
           <thead class="text-left">
             <tr class="border">
@@ -109,6 +118,7 @@
         </p>
         <p class="bg-midnightblue shadow rounded-md px-2 py-1 mt-8 hidden" id="decouvert-depassé"></p>
       </div>
+      <!---------- Depôt & retrait --------->
       <section>
         <div class="flex flex-col justify-start items-center pt-8 border-2">
           <div class="bg-midnightblue shadow rounded-md px-2 py-1 border-2">
@@ -128,7 +138,7 @@
               Retirer
             </button>
           </div>
-          <div class="bg-blue-700 shadow rounded-md px-2 py-1 mt-8 border-2">
+          <div class="bg-violet-500 shadow rounded-md px-2 py-1 mt-8 border-2">
             <p for="" class=" text-white">
               votre solde est de :
               <span id="solde" type="number" class="rounded-md inline-block text-white"></span>€
@@ -138,29 +148,73 @@
       </section>
     </div>
   </div>
-  <div class="flex flex-col justify-center items-center my-2">
-    <p class="shadow rounded-md px-4 py-2 mt-8 inline-block text-gray-100 text-2xl bg-orange-500">
-      Effectuer un virement
-    </p>
-    <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1 border-2">
-      <label for="beneficiary"> Ajouter un bénéficiare</label>
-      <input type="text"
-        class="rounded-md ml-2 text-gray-500 border-collapse outline-none inline-block w-5/12 px-2 py-2 capitalize"
-        maxlength="25" placeholder="Nom et prenom" id="input-beneficiary">
-      <button type="submit" class="border-2 px-2 rounded-md" id="btn-beneficiary">Confirmer</button>
+  <!------------- Virement ----------------->
+  <div class=" flex flex-col justify-evenly items-center">
+    <div class="w-1/3 pt-16">
+      <p class="border-bottom rounded-sm"></p>
     </div>
-    <div class="">
-      <select name="" id="beneficiary"
-        class="rounded-md ml-2 text-gray-500 outline-none inline-block w-28 px-2 py-2 my-2">
-        <option value="">Sepa</option>
-        <option value=""></option>
-      </select>
+    <div class="flex flex-col justify-center items-center py-8">
+      <p class="shadow rounded-md px-4 py-2 my-6 inline-block text-gray-100 text-2xl bg-violet-500">
+        Espace virement
+      </p>
+      <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1 border-2">
+        <label for="input-beneficiary"> Ajouter un bénéficiaire</label>
+        <input type="text"
+          class="rounded-md ml-2 text-gray-500 border-collapse outline-none inline-block w-5/12 px-2 py-2 capitalize"
+          maxlength="25" placeholder="Nom et prenom" id="input-beneficiary">
+        <button type="submit" class="border-2 px-2 rounded-md" id="btn-beneficiary">Ajouter</button>
+      </div>
+      <div class="my-4 hidden bg-midnightblue shadow rounded-md px-3 py-2 text-lg " id="div-beneficiary">
+        <p class="text-green-700">Le bénéficiare <span class=" capitalize text-green-700 text-xl" id="span-beneficiary">
+          </span> a été ajouté avec
+          succés</p>
+      </div>
+      <div class="bg-midnightblue mt-4 shadow rounded-md px-3 py-1 border-2 ">
+        <label for="beneficiary">Choisir un bénéficiaire</label>
+        <select name="" id="beneficiary"
+          class="rounded-md ml-2 text-gray-500 outline-none  inline-block w-full px-2 py-2 my-2">
+          <option value="">--Sélectionner--</option>
+          <optgroup label="SEPA">
+            <option value="" id="option-benefeciary"></option>
+          </optgroup>
+        </select>
+        <button type="submit" class="border-2 px-4 py-2 rounded-md inline-block my-0 mx-auto font-bold"
+          id="btn-beneficiary">Confirmer</button>
+      </div>
     </div>
-    <div class="my-4 hidden bg-green-300 shadow rounded-md px-3 py-2 border-2 text-lg " id="div-beneficiary">
-      <p>Le bénéficiare <span class=" capitalize text-white text-xl" id="span-beneficiary"> </span> a été ajouté avec succés</p>
+    <div class="w-1/3 pt-4">
+      <p class="border-bottom rounded-sm"></p>
+    </div>
+    <!---------- canvas ------->
+    <div class="w-1/4 flex flex-col justify-center py-12">
+      <h1
+        class="shadow rounded-md px-4 py-2 inline-block text-gray-100 text-2xl bg-violet-500 my-0 mx-auto text-center">
+        Statistiques clients</h1>
+      <canvas id="myChart" class=" py-8"></canvas>
     </div>
   </div>
-  </div>
+  <!----------- Footer ----------->
+  <footer class="flex justify-center items-center bg-gradient-to-r w-full h-14 text-white">
+    <p>copyright&copy2022-<span class="capitalize">tous droits reservés</span></p>
+    <div class=" pl-4">
+      <span>
+        <a href="https://github.com/hatim77100" target="_blank" rel="noreferrer noopener" class="decoration-none">
+          <i class="fa-brands fa-github text-white fa-xl"></i>
+        </a>
+      </span>
+      <span class="px-4">
+        <a href="https://www.linkedin.com/in/hatim-najoua-677212251/" target="_blank" rel="noreferrer noopener" class="decoration-none">
+
+          <i class="fa-brands fa-linkedin text-white fa-xl"></i>
+        </a>
+      </span>
+      <span>
+        <a href="#" target="_blank" rel="noreferrer noopener" class="decoration-none">
+          <i class="fa-solid fa-link text-white fa-xl"></i>
+        </a>
+      </span>
+    </div>
+  </footer>
 </body>
 
 </html>

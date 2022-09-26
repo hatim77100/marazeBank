@@ -21,7 +21,7 @@
 }
 
 .bg-gradient-to-r	{
-  background-image: linear-gradient(to right, #c0b283, #dab641);
+  background-image: linear-gradient(to right, #c8b062, #876a0c);
 }
 
 thead tr:last-of-type {
@@ -41,4 +41,7 @@ thead tr:last-of-type {
 .none{
   display: none;
 }
-
+/* ----- border -----*/
+.border-bottom {
+  border: 15px solid rgb(190, 190, 205);
+}
