@@ -19,7 +19,12 @@
   background-color: rgb(206, 206, 236);
   color:#000000;
 }
-
+.bg-body-img {
+  background-image: url(./assets/img/neige.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 .bg-gradient-to-r	{
   background-image: linear-gradient(to right, #c8b062, #876a0c);
 }

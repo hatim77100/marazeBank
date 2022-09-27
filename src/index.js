@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/js/all";
 //----- chart -----
 import chart from "./components/chart";
 // ------ date ----
-import datex from "./components/date";
+import { interval } from "./components/date";
 
 // users
 import Users from "./components/profils";
@@ -125,8 +125,11 @@ const retirerDeLArgent = () => {
 
 btnRetirer.addEventListener("click", retirerDeLArgent);
 
-datex();
+
+interval()
 chart();
+
+
 
 
 
