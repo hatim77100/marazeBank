@@ -10,7 +10,7 @@
     "start:serve": "webpack serve --open --config webpack.dev.js",
     "start:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/assets/css/output.css --watch",
     "server": "node server.js",
-    "build" : "run-s start:**",
+    "build": "run-s build:**",
     "build:webpack": "webpack --config webpack.prod.js",
     "build:tailwind": "npx tailwindcss -i ./src/style.css -o ./dist/assets/css/output.css"
   },
@@ -18,7 +18,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
     "@fortawesome/fontawesome-free": "^6.1.2",
+    "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "csv-loader": "^3.0.5",

@@ -2,14 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
-
 module.exports = {
-  // mode: "development",
   entry: path.resolve(__dirname, "./src/index.js"),
-  devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),
@@ -52,6 +46,16 @@ module.exports = {
       {
         test: /\.xml$/i,
         use: ["xml-loader"],
+      },
+      {
+        test: /.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
     ],
   },
