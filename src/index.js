@@ -4,6 +4,10 @@ import "@fortawesome/fontawesome-free/js/all";
 import chart from "./components/chart";
 // ------ date ----
 import { interval } from "./components/date";
+// virements
+import { inputVirement } from "./components/virement";
+// import { btnBeneficiaryConfirmed } from "./components/virement";
+
 
 // users
 import Users from "./components/profils";

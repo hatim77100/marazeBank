@@ -563,10 +563,6 @@ video {
   right: 1rem;
 }
 
-.top-4 {
-  top: 1rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -721,6 +717,11 @@ video {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#333\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -737,6 +738,10 @@ video {
 
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-2 {
@@ -824,6 +829,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -858,6 +868,36 @@ video {
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.text-green-300 {
+  --tw-text-opacity: 1;
+  color: rgb(134 239 172 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-red-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 202 202 / var(--tw-text-opacity));
+}
+
+.text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .shadow {
@@ -962,20 +1002,16 @@ thead tr:last-of-type {
     display: grid;
   }
 
-  .md\:h-16 {
-    height: 4rem;
+  .md\:h-40 {
+    height: 10rem;
   }
 
   .md\:h-14 {
     height: 3.5rem;
   }
 
-  .md\:h-auto {
-    height: auto;
-  }
-
-  .md\:w-16 {
-    width: 4rem;
+  .md\:w-\[200px\] {
+    width: 200px;
   }
 
   .md\:w-7\/12 {
@@ -998,22 +1034,6 @@ thead tr:last-of-type {
     width: 25%;
   }
 
-  .md\:w-1 {
-    width: 0.25rem;
-  }
-
-  .md\:w-20 {
-    width: 5rem;
-  }
-
-  .md\:w-4 {
-    width: 1rem;
-  }
-
-  .md\:w-44 {
-    width: 11rem;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1034,6 +1054,10 @@ thead tr:last-of-type {
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:w-full {
     width: 100%;
   }
